@@ -1,5 +1,5 @@
 import React from "react";
-import bgImg from '../assets/cyber-bg.png'
+//import bgImg from '../assets/cyber-bg.png'
  
 const Hero=()=>{
 
@@ -16,7 +16,7 @@ const Hero=()=>{
             </div>
 
             <div className="flex">
-                <img className="w-full" src={bgImg}/>
+                
             </div>
         </div>
         
