@@ -9,6 +9,6 @@ li{
 }
 button{
     @apply  text-white border bg-[#eb6b56] border-[#eb6b56]
-    hover:bg-transparent  rounded-lg
+    
 }
 }

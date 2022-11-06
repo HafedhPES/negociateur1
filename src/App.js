@@ -3,12 +3,16 @@ import './App.css';
 import Navbar from './components/navbar';
 import Hero from './components/hero';
 import Search from './components/search';
+import Login from './pages/login';
 
 function App() {
   return (
   <>  
- <Navbar/>
- <Search/>
+ <Login/>
+ 
+
+
+
  </>
     
   );

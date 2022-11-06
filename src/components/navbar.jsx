@@ -3,7 +3,7 @@ import { UserIcon } from '@heroicons/react/24/outline'
 
 const Navbar= ()=>{
 return(
-    <div className=" drop-shadow-md flex  justify-between items-center w-screen h-[65px] bg-white border-b border-gray-100">
+    <div className=" drop-shadow-md flex  justify-between items-center w-full h-[65px] bg-white border-b border-gray-100">
     <div className="hidden sm:flex sm:w-3/12    px-2">
     <h1 className=" sm:text-3xl text-[#eb6b56] font-bold">Negociateur</h1>
     </div>
