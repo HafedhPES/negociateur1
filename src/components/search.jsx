@@ -5,11 +5,13 @@ import HiTechIcon from "../assets/hitech.svg"
 import NautiqueIcon from "../assets/nautique.svg"
 import MeubleIcon from "../assets/meuble.svg"
 import LoisirsIcon from "../assets/loisirs.svg"
+import Navbar from "./navbar"
 const Search =()=>{
   // classes css
   const catcss="cursor-pointer rounded-xl flex justify-center items-center bg-gray-100 py-4 hover:bg-gray-200 px-4"
   const textcatcss= "flex font-bold justify-center"
-  return(
+  return(<>
+  <Navbar/>
         <div className= "flex text-black justify-center  w-full">
 <div className="grid  grid-cols-2 gap-10 sm:grid-cols-3 md:grid-cols-6 px-6 py-5">
     <div className="flex-col">
@@ -40,6 +42,7 @@ const Search =()=>{
     </div>
 </div>
         </div>
+        </>
     )
 }
 export default Search;
