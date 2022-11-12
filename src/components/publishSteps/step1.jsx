@@ -29,17 +29,7 @@ const Step1= ()=>{
 <textarea  type="text" className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm"/>
 <label className="mt-4 text-gray-500 font-bold">Prix</label>
 <input  type="text" className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm"/>
-<div className="grid grid-cols-2 gap-3 mt-2">
-    <button className="bg-[#eb6b56]  py-3 font-bold rounded-lg flex items-center justify-evenly">
-    <img className="w-4 px-1 py-1 bg-white rounded-3xl" src={BackIcon}/>
-        Retour
 
-    </button>
-    <button className="bg-indigo-500 py-3 font-bold rounded-lg flex items-center justify-evenly">
-    <img className="w-4 bg-white rounded-3xl" src={NextIcon}/>
-        Suivant
-        </button>
-</div>
         
         </>
     )
