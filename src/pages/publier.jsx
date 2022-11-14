@@ -5,6 +5,7 @@ import BackIcon from "../assets/back.svg"
 import Step1 from "../components/publishSteps/step1"
 import Step2 from "../components/publishSteps/step2"
 import Step3 from "../components/publishSteps/step3"
+import Step4 from "../components/publishSteps/step4"
 
 const Publier =  ()=>{
     const [step,setStep]= useState(1)
@@ -27,11 +28,13 @@ return(
 </div>
 
 {step==1 &&
-<Step1 setStep={setStep}/> }
+<Step1 /> }
 {step==2&&
-<Step2 setStep={setStep}/> }
+<Step2 /> }
 {step==3&&
-<Step3 setStep={setStep}/> }
+<Step3 /> }
+{step==4&&
+<Step4 /> }
 <div className="grid grid-cols-2 gap-3 mt-2">
     <button onClick={()=>setStep(step-1)} className="bg-[#eb6b56]  py-3 font-bold rounded-lg flex items-center justify-evenly">
     <img className="w-4 px-1 py-1 bg-white rounded-3xl" src={BackIcon}/>
