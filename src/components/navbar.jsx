@@ -1,6 +1,7 @@
 import React from "react";
 import { UserIcon } from '@heroicons/react/24/outline'
 import { Link } from "react-router-dom";
+import publishIcon from "../assets/publish.svg"
 
 const Navbar= ()=>{
 return(
@@ -15,7 +16,11 @@ return(
     <input type="text" className="w-3/6 focus:w-5/6  text-black placeholder:text-gray-300 text-lg border border-[#eb6b56] outline-none rounded-lg px-2 py-2" placeholder="Recherche"/>
     </div>
     <div className="hidden sm:flex w-3/12  ">
-        <Link to="/publier"><button className="px-4 py-2 rounded-lg hover:text-[#eb6b56]"> + Déposer une annonce </button> </Link>
+        <Link to="/publier"><button className=" flex justify-between items-center px-4 py-2 rounded-lg"> 
+          
+        <img className="w-7" src={publishIcon}/>
+        <p className="text-md font-bold">Déposer une annonce </p>
+        </button> </Link>
     </div>
     <div className="hidden sm:flex justify-center w-2/12">
     <Link to="/login">  <button className="bg-transparent text-black px-2 py-2 hover:px-3 hover:py-3"><UserIcon className="w-5 inline mr-2"/>
