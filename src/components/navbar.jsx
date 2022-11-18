@@ -36,7 +36,7 @@ return(<>
     
     </div>
     <div className="flex md:hidden justify-between drop-shadow-md    items-center w-full h-[65px] bg-white border-b border-gray-100">
-    <Link to="/"><h1 className="text-3xl text-[#eb6b56] font-bold px-4 cursor-pointer">Negociateur</h1></Link>
+    <Link to="/"><h1 className="text-xl text-[#eb6b56] font-bold px-4 cursor-pointer">Negociateur</h1></Link>
     <img src={menuIcon} onClick={handleClick}/>
     </div>
     {nav&&

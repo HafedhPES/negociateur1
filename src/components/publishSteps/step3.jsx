@@ -14,17 +14,17 @@ console.log(numStatus)
     <div className="flex flex-col mt-3">
      <label className=" text-gray-500 font-bold">Ville</label>
      <select className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
-        <option>Manuelle</option>
-        <option>Automatique</option>
+        <option>Nabeul</option>
+        <option>Tunis</option>
      </select>
     </div>
     <div className="flex flex-col mt-3">
     <label className=" text-gray-500 font-bold">Delegation</label>
      <select className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
-        <option>Diesel</option>
-        <option>Essence</option>
-        <option>Hyride</option>
-        <option>Electrique</option>
+        <option>Grombalia</option>
+        <option>Klibia</option>
+        <option>Korba</option>
+        <option>Hammamet</option>
      </select>
 
     </div>
