@@ -1,71 +1,76 @@
-import {React,useState} from "react"
+import {React,useState,useEffect } from "react"
 import Navbar from "../components/navbar"
-import NextIcon from "../assets/next.svg"
-import BackIcon from "../assets/back.svg"
 import Step1 from "../components/publishSteps/step1"
-import Step2 from "../components/publishSteps/step2"
-import Step3 from "../components/publishSteps/step3"
-import Step4 from "../components/publishSteps/step4"
-import Step22 from "../components/publishSteps/step22"
- 
+import Stepper from "../components/publishSteps/stepper"
+import Buttons from "../components/publishSteps/buttons"
+
+ const Publier =  ()=>{
+  
 
 
-const Publier =  ()=>{
+    
     const [step,setStep]= useState(1)
-    const [maxStep,setMaxStep]= useState(3)
+    const [stepName,setStepName]=useState('stepcommun')
+    const [errors,setErrors]= useState({})
+    const [formIsValid,setFormIsValid]=useState(false)
+    const [maxStep,setMaxStep]= useState(null)
     const [post,setPost]=useState(
         {cat:"",
-         sousCat:""  
+         sousCat:"" ,
+         titre:"" ,
+         description:"",
+         prix:"",
+         kil:"",
+         annee:"",
+         boite:"",
+         energie:"",
+         marque:"",
+         modele:"",
+         pf:"",
+         couleur:"",
+         ville:"",
+         del:"",
+         tel:"",
+         type:"",
+         superficie:'',
+         chambre:"",
+         sb:""
         })
-    const [sousCatOptions,setSousCatsOptions]=useState([])
+    const handleValidation=()=>{
+      if(post.titre.length==0){
+        setErrors({...errors,['titre']:"saisir un titre"})
+        setFormIsValid(false);
+      }
+      else{
+        setErrors({...errors,['titre']:""})
+        setFormIsValid(true);
+      }
+      
+
+    }
+    const handleMaxStep=()=>{
+    
+      if (((post.cat=='Véhicules') && ((post.sousCat=="Voitures")|| (post.sousCat=='Camions')))||(post.cat=="Immobilier")){
+       
+        setMaxStep(4)
+    }
+    else{
+      setMaxStep(3)
+    }
+  }
     const handleChange=({currentTarget})=>{
         const {name,value}= currentTarget;
         
-        setPost({...post,[name]:value}) 
+       setPost({...post,[name]:value}) 
+      
+      
+
         
     }
-const renderSteps=()=>{
-    
-         
-        if ((post.cat=='Véhicules') && ((post.sousCat=="Voitures")|| (post.sousCat=='Camions'))){
-      
-      return(<>
-      {step==2&&
-<Step2 /> }
-{step==3&&
-<Step4 /> }
-{step==4&&
-<Step3 /> }
-      </>)
-      }
-      else if (post.cat=="Immobilier"){
-        return(<>
-            {step==2&&
-<Step22 /> }
-{step==3&&
-<Step4 /> }
-{step==4&&
-<Step3 /> }
-      </>
-        )
+   
+   
+    useEffect(()=>{handleMaxStep()},[post.cat,post.sousCat])
 
-      }
-      else {
-        
-        return(<>
-            
-            {step==2&&
-<Step4 /> }
-{step==3&&
-<Step3 /> }
-
-      </>)
-      
-      }
-        
-    
-
-}
 return(
 <>
 
@@ -86,20 +91,9 @@ return(
 </div>
 
 {step==1 &&
-<Step1 post={post} handleChange={handleChange}/> }
-{renderSteps()}
-<div className="grid grid-cols-2 gap-3 mt-2">
-    <button onClick={()=>setStep(step-1)} className="bg-[#eb6b56]  py-3 font-bold rounded-lg flex items-center justify-evenly">
-    <img className="w-4 px-1 py-1 bg-white rounded-3xl" src={BackIcon}/>
-        Retour
-
-    </button>
-    <button className="bg-indigo-500 py-3 font-bold rounded-lg flex items-center justify-evenly" onClick={()=>setStep(step+1)}>
-    <img className="w-4 bg-white rounded-3xl" src={NextIcon}/>
-        Suivant
-        </button>
-</div>
-
+<Step1 post={post} handleChange={handleChange}  errors={errors} setStepName={setStepName}/> }
+<Stepper post={post} handleChange={handleChange} step={step} setStepName={setStepName}/>
+<Buttons step={step} post={post} maxStep={maxStep} setStep={setStep} setErrors={setErrors} stepName={stepName}/>
 
       </div>
 

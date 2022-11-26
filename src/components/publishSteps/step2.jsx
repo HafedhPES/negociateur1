@@ -1,20 +1,22 @@
 import React from "react";
 import NextIcon from "../../assets/next.svg"
 import BackIcon from "../../assets/back.svg"
-const Step2= ()=>{
+import { useEffect } from "react";
+const Step2= ({post,handleChange,setStepName})=>{
 
+    useEffect(()=>setStepName('stepveh'))
 
     return(
         <>
         <div className="mt-2 grid grid-cols-2 gap-2">
     <div className="flex flex-col mt-3">
      <label className=" text-gray-500 font-bold">Kilométrage</label>
-     <input className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm" type="text"/>
+     <input value={post.kil} name="kil" onChange={handleChange} className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm" type="text"/>
        
     </div>
     <div className="flex flex-col mt-3">
     <label className=" text-gray-500 font-bold">Année</label>
-     <input className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm" type="text"/>
+     <input value={post.annee} name="annee" onChange={handleChange} className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm" type="text"/>
         
 
     </div>
@@ -22,14 +24,14 @@ const Step2= ()=>{
 <div className="mt-2 grid grid-cols-2 gap-2">
     <div className="flex flex-col mt-3">
      <label className=" text-gray-500 font-bold">Boite</label>
-     <select className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
+     <select value={post.boite} name="boite" onChange={handleChange} className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
         <option>Manuelle</option>
         <option>Automatique</option>
      </select>
     </div>
     <div className="flex flex-col mt-3">
     <label className=" text-gray-500 font-bold">Energie</label>
-     <select className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
+     <select value={post.energie} name="energie" onChange={handleChange} className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
         <option>Diesel</option>
         <option>Essence</option>
         <option>Hyride</option>
@@ -41,14 +43,14 @@ const Step2= ()=>{
 <div className="mt-2 grid grid-cols-2 gap-2">
     <div className="flex flex-col mt-3">
      <label className=" text-gray-500 font-bold">Marque</label>
-     <select className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
+     <select value={post.marque} name="marque" onChange={handleChange} className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
         <option>Véhicules</option>
         <option>Immobilier</option>
      </select>
     </div>
     <div className="flex flex-col mt-3">
     <label className=" text-gray-500 font-bold">Modele</label>
-     <select className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
+     <select value={post.modele} name="modele" onChange={handleChange} className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
         <option>Peugeot</option>
         <option>Renaut</option>
      </select>
@@ -58,7 +60,7 @@ const Step2= ()=>{
 <div className="mt-2 grid grid-cols-2 gap-2">
     <div className="flex flex-col mt-3">
      <label className=" text-gray-500 font-bold">Puissance fiscale</label>
-     <select className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
+     <select value={post.pf} name="pf" onChange={handleChange} className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
         <option>4</option>
         <option>5</option>
         <option>6</option>
@@ -71,7 +73,7 @@ const Step2= ()=>{
     </div>
     <div className="flex flex-col mt-3">
     <label className=" text-gray-500 font-bold">Couleur</label>
-     <select className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
+     <select value={post.couleur} name="couleur" onChange={handleChange} className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
         <option>Blanc</option>
         <option>Noir</option>
      </select>

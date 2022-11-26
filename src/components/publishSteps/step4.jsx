@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import addIcon from "../../assets/add.svg"
 import { useRef } from "react";
 import Uploader from "../uploader";
-const Step4= ()=>{
+const Step4= ({setStepName})=>{
     const [files,setFiles]=useState(null)
     const uploadRef= useRef()
+    useEffect(()=>setStepName('stepuploads'))
 
 
     return(

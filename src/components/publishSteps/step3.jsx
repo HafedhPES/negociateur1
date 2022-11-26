@@ -1,9 +1,10 @@
-import {React,useState} from "react";
+import {React,useEffect,useState} from "react";
 
-const Step3= ()=>{
+const Step3= ({post,handleChange,setStepName})=>{
+    useEffect(()=>setStepName('stepinfo'))
 
 const [numStatus,setNumStatus]=useState(true)
-const handleChange= e=>{
+const handleChecked= e=>{
 setNumStatus(e.target.checked)
 console.log(numStatus)
 }
@@ -13,14 +14,14 @@ console.log(numStatus)
 <div className="mt-2 grid grid-cols-2 gap-2">
     <div className="flex flex-col mt-3">
      <label className=" text-gray-500 font-bold">Ville</label>
-     <select className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
+     <select value={post.ville} name="ville" onChange={handleChange} className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
         <option>Nabeul</option>
         <option>Tunis</option>
      </select>
     </div>
     <div className="flex flex-col mt-3">
     <label className=" text-gray-500 font-bold">Delegation</label>
-     <select className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
+     <select  value={post.delegation} name="delegation" onChange={handleChange}  className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm">
         <option>Grombalia</option>
         <option>Klibia</option>
         <option>Korba</option>
@@ -35,7 +36,7 @@ console.log(numStatus)
     <p className="text-sm text-gray-500">Utiliser mon numéro principal ?</p>
     <div className="flex justify-end">
     <label flex for="checked-toggle" className="inline-flex relative items-center cursor-pointer">
-  <input onChange={handleChange} type="checkbox"  checked={numStatus} id="checked-toggle" class="sr-only peer" name="tel" />
+  <input onChange={handleChecked} type="checkbox"  checked={numStatus} id="checked-toggle" class="sr-only peer" name="tel" />
   <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#eb6b56]"></div>
   
 </label>
@@ -43,7 +44,7 @@ console.log(numStatus)
 </div>
 { !numStatus &&<>
 <label className="mt-4 text-gray-500 font-bold">Tel</label>
-<input  type="number" className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm"/>
+<input  value={post.tel} name="tel" onChange={handleChange}  type="number" className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm"/>
 </>
  }
         </>
