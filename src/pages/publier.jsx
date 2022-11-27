@@ -3,6 +3,7 @@ import Navbar from "../components/navbar"
 import Step1 from "../components/publishSteps/step1"
 import Stepper from "../components/publishSteps/stepper"
 import Buttons from "../components/publishSteps/buttons"
+import validation from "../services/validation"
 
  const Publier =  ()=>{
   
@@ -12,7 +13,7 @@ import Buttons from "../components/publishSteps/buttons"
     const [step,setStep]= useState(1)
     const [stepName,setStepName]=useState('stepcommun')
     const [errors,setErrors]= useState({})
-    const [formIsValid,setFormIsValid]=useState(false)
+  
     const [maxStep,setMaxStep]= useState(null)
     const [post,setPost]=useState(
         {cat:"",
@@ -36,18 +37,10 @@ import Buttons from "../components/publishSteps/buttons"
          chambre:"",
          sb:""
         })
-    const handleValidation=()=>{
-      if(post.titre.length==0){
-        setErrors({...errors,['titre']:"saisir un titre"})
-        setFormIsValid(false);
-      }
-      else{
-        setErrors({...errors,['titre']:""})
-        setFormIsValid(true);
-      }
+    
       
 
-    }
+    
     const handleMaxStep=()=>{
     
       if (((post.cat=='Véhicules') && ((post.sousCat=="Voitures")|| (post.sousCat=='Camions')))||(post.cat=="Immobilier")){
@@ -61,13 +54,14 @@ import Buttons from "../components/publishSteps/buttons"
     const handleChange=({currentTarget})=>{
         const {name,value}= currentTarget;
         
-       setPost({...post,[name]:value}) 
-      
-      
-
-        
+       setPost({...post,[name]:value})    
     }
-   
+    const handleBlur=({currentTarget})=>{
+     const {value,name}=currentTarget
+      const err=validation.validatePost(post,stepName);
+      
+      setErrors({...errors,[name]:err[name]})
+      }
    
     useEffect(()=>{handleMaxStep()},[post.cat,post.sousCat])
 
@@ -91,8 +85,8 @@ return(
 </div>
 
 {step==1 &&
-<Step1 post={post} handleChange={handleChange}  errors={errors} setStepName={setStepName}/> }
-<Stepper post={post} handleChange={handleChange} step={step} setStepName={setStepName}/>
+<Step1 post={post} handleChange={handleChange} handleBlur={handleBlur}  errors={errors} setStepName={setStepName}/> }
+<Stepper post={post} errors={errors} handleChange={handleChange} step={step} setStepName={setStepName}/>
 <Buttons step={step} post={post} maxStep={maxStep} setStep={setStep} setErrors={setErrors} stepName={stepName}/>
 
       </div>

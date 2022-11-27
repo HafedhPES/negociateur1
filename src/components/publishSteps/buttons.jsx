@@ -5,6 +5,15 @@ import { useEffect } from "react"
 import validation from "../../services/validation"
 const Buttons=({step,setStep,maxStep,stepName,setErrors,post})=>{
 //useEffect(()=>{},[formIsValid])
+const onSumit=(e)=>{
+    const errors=validation.validatePost(post,stepName);
+     console.log(errors)
+     setErrors(errors)
+     if(Object.keys(errors).length==0){
+        console.log('valide')
+     }
+
+}
 const submitStep=(e)=>{
       
     
@@ -29,7 +38,7 @@ return(
     
     }
     {step==maxStep?
-    <button   className="bg-indigo-500 py-3 font-bold rounded-lg flex items-center justify-evenly">
+    <button   onClick={()=>onSumit()} className="bg-indigo-500 py-3 font-bold rounded-lg flex items-center justify-evenly">
    
         Envoyer
         </button>: 
