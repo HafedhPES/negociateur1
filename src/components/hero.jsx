@@ -5,7 +5,7 @@ const Hero=()=>{
 
 
     return(
-        <div className="w-full h-screen flex flex-col justify-between bg-zinc-200">
+        <div className=" flex flex-col justify-between bg-zinc-200">
         <div className="grid md:grid-cols-2 m-auto">
             <div className="flex flex-col justify-center md:items-start w-full px-2 ">
             <p className='text-2xl'>Unique Sequencing & Production</p>
