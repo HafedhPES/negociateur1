@@ -54,14 +54,12 @@ import validation from "../services/validation"
     const handleChange=({currentTarget})=>{
         const {name,value}= currentTarget;
         
-       setPost({...post,[name]:value})    
-    }
-    const handleBlur=({currentTarget})=>{
-     const {value,name}=currentTarget
-      const err=validation.validatePost(post,stepName);
+       setPost({...post,[name]:value}) 
+       const err=validation.validatePost({...post,[name]:value},stepName);
       
-      setErrors({...errors,[name]:err[name]})
-      }
+       setErrors({...errors,[name]:err[name]})   
+    }
+   
    
     useEffect(()=>{handleMaxStep()},[post.cat,post.sousCat])
 
@@ -85,7 +83,7 @@ return(
 </div>
 
 {step==1 &&
-<Step1 post={post} handleChange={handleChange} handleBlur={handleBlur}  errors={errors} setStepName={setStepName}/> }
+<Step1 post={post} handleChange={handleChange}   errors={errors} setStepName={setStepName}/> }
 <Stepper post={post} errors={errors} handleChange={handleChange} step={step} setStepName={setStepName}/>
 <Buttons step={step} post={post} maxStep={maxStep} setStep={setStep} setErrors={setErrors} stepName={stepName}/>
 

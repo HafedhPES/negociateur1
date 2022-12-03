@@ -3,7 +3,7 @@ import NextIcon from "../../assets/next.svg"
 import BackIcon from "../../assets/back.svg"
 import options from "../../services/options";
 
-const Step1= ({post,handleChange,handleBlur,setStepName,errors})=>{
+const Step1= ({post,handleChange,setStepName,errors})=>{
     useEffect(()=>setStepName('stepcommun'),[])
 
 
@@ -33,13 +33,13 @@ const Step1= ({post,handleChange,handleBlur,setStepName,errors})=>{
     </div>
 </div>
 <label className="mt-4 text-gray-500 font-bold">Titre</label>
-<input  type="text"  value={post.titre} name="titre" onChange={handleChange} onBlur={handleBlur} className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm"/>
+<input  type="text"  value={post.titre} name="titre" onChange={handleChange}  className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm"/>
 {errors["titre"]&& <p className="text-red-600">{errors["titre"]}</p>}
 <label className="mt-4 text-gray-500 font-bold">Description</label>
-<textarea onBlur={handleBlur} type="text" value={post.description} name="description" onChange={handleChange} className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm"/>
+<textarea  type="text" value={post.description} name="description" onChange={handleChange} className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm"/>
 {errors["description"]&& <p className="text-red-600">{errors["description"]}</p>}
 <label className="mt-4 text-gray-500 font-bold">Prix</label>
-<input  type="number" value={post.prix} name="prix" onBlur={handleBlur} onChange={handleChange} className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm"/>
+<input  type="number" value={post.prix} name="prix"  onChange={handleChange} className="mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm"/>
 {errors["prix"]&& <p className="text-red-600">{errors["prix"]}</p>}
         
         </>
