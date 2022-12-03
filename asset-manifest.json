@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/negociateur1/static/css/main.5e7451b7.css",
+    "main.js": "/negociateur1/static/js/main.5e18cbd3.js",
+    "static/js/787.71df535f.chunk.js": "/negociateur1/static/js/787.71df535f.chunk.js",
+    "static/media/logo.svg": "/negociateur1/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/nautique.svg": "/negociateur1/static/media/nautique.a32ee19286f0575c3c5e9442bb1eb67b.svg",
+    "static/media/hitech.svg": "/negociateur1/static/media/hitech.238227b757aba98687dcd849dab7407c.svg",
+    "static/media/loisirs.svg": "/negociateur1/static/media/loisirs.e241ce159e40ea1ffacaea980126c496.svg",
+    "static/media/meuble.svg": "/negociateur1/static/media/meuble.8ca419ce3db46b94ab7477b524334368.svg",
+    "static/media/person.svg": "/negociateur1/static/media/person.3d899d983eae3cd7f9b2dc685d7f0db4.svg",
+    "index.html": "/negociateur1/index.html",
+    "static/media/vehicule.svg": "/negociateur1/static/media/vehicule.de3d8bc087b9a9680c1c15db55edc250.svg",
+    "static/media/uploader.svg": "/negociateur1/static/media/uploader.d7e2d491c451a4ccd75546efea59dcdb.svg",
+    "static/media/publish2.svg": "/negociateur1/static/media/publish2.10427444e842f58f8aacade05e5429e9.svg",
+    "static/media/publish.svg": "/negociateur1/static/media/publish.41d4b9a1a5a8f58c38e2a5e7c3f6515e.svg",
+    "static/media/home.svg": "/negociateur1/static/media/home.9e5d53957c7647c952a72c869929903c.svg",
+    "static/media/immo.svg": "/negociateur1/static/media/immo.9e5d53957c7647c952a72c869929903c.svg",
+    "static/media/next.svg": "/negociateur1/static/media/next.10628e0628959f72253bfdc0eaf98151.svg",
+    "static/media/back.svg": "/negociateur1/static/media/back.6f1d011782adc27d169788a55e73912d.svg",
+    "static/media/add.svg": "/negociateur1/static/media/add.abdacfb29a1d3a899a58a003f6239f1c.svg",
+    "static/media/menu.svg": "/negociateur1/static/media/menu.113d59e2703636dfe157ec8ec962d598.svg",
+    "main.5e7451b7.css.map": "/negociateur1/static/css/main.5e7451b7.css.map",
+    "main.5e18cbd3.js.map": "/negociateur1/static/js/main.5e18cbd3.js.map",
+    "787.71df535f.chunk.js.map": "/negociateur1/static/js/787.71df535f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5e7451b7.css",
+    "static/js/main.5e18cbd3.js"
+  ]
+}
