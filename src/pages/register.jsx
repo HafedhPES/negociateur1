@@ -7,42 +7,54 @@ const inputcss="border border-gray-300 mt-2 outline-none rounded-md px-1 py-2 fo
     return(
         <>
         <Navbar/>
-        <div className="flex py-3 bg-gray-100 w-full h-full sm:h-screen justify-center">
+        <div className="container">
+        <div className="title-container">
+        
+               <p className="title">Créer un compte </p>
+        
+    </div>
+        <div className="form-container">
       
-  <div className=' flex flex-col w-[80%]   h-min rounded-md bg-white px-3 py-3'>
-  <h1 className="text-lg font-bold">S'inscrire</h1>
-   <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-<div className="mt-1 flex flex-col">
-    <label>Nom </label>
-    <input className={inputcss} type="text"/>
-</div>
-<div className="mt-1 flex flex-col">
-    <label>Prénom</label>
-    <input className={inputcss} type="text"/>
-</div>
-<div className="mt-1 flex flex-col">
-    <label>Email</label>
-    <input className={inputcss} type="text"/>
-</div>
-<div className="mt-1 flex flex-col">
-    <label>Tel</label>
-    <input className={inputcss} type="number"/>
-</div>
-<div className="mt-1 flex flex-col">
-    <label>Mot de passe</label>
-    <input className={inputcss} type="text"/>
-</div>
-<div className="mt-1 flex flex-col">
-    <label>Confirmer mot de passe</label>
-    <input className={inputcss} type="text"/>
-</div>
-</div>
+  <div className=' flex flex-col'>
+  
+  <div className="mt-4 flex gap-2">
+    <div className="flex flex-col">
+    <label className="form-label">Nom</label>
+    <input className="form-text" type="text" name="name"/>
+    </div>
+    <div className="flex flex-col">
+    <label className="form-label">prénom</label>
+    <input className="form-text" type="text"/>
+    </div>
+  </div>
+  <div className="mt-2 flex gap-2">
+    <div className="flex flex-col">
+    <label className="form-label">Email</label>
+    <input className="form-text" type="text" name="email"/>
+    </div>
+    <div className="flex flex-col">
+    <label className="form-label">Tel</label>
+    <input type="number" name="tel" className="form-text"/>
+    </div>
+  </div>
+  <div className="mt-2 flex gap-2">
+    <div className="flex flex-col">
+    <label className="form-label">Mot de passe</label>
+    <input type="password" className="form-text" name="pwd"/>
+    </div>
+    <div className="flex flex-col">
+    <label className="form-label">Confirmer mot de passe</label>
+    <input className="form-text" type="password" name="cpwd"/>
+    </div>
+  </div>
+   
 
-<button className="flex rounded-sm w-[50%] justify-center m-auto mt-8 py-2 font-bold">S'inscrire</button>
+<button className="flex bg-indigo-500 rounded-sm w-full justify-center m-auto mt-8 py-2 font-bold">S'inscrire</button>
 <p className="mt-8 flex justify-center">Vous avez un compte ?</p>
-<Link to="/login"><p className="flex mt-5 text-indigo-500 justify-center cursor-pointer">Se connecter</p></Link>
+<Link to="/login"><p className="flex mt-5 text-[#eb6b56] justify-center cursor-pointer">Se connecter</p></Link>
   </div>
 
+ </div>
  </div>
         </>
     )

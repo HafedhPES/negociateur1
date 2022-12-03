@@ -11,4 +11,22 @@ button{
     @apply  text-white  bg-[#eb6b56] outline-none
     
 }
+.form-text{
+    @apply mt-2 bg-gray-100 text-gray-500 px-4 py-3 outline-none rounded-sm
+}
+.form-label{
+    @apply  text-gray-500 font-bold
+}
+.title-container{
+    @apply flex px-3 pt-3 mt-2 bg-white
+}
+.title{
+    @apply relative sm:pr-28 top-1 text-lg sm:text-xl  pb-6 border-b-4 border-indigo-500 text-indigo-500 w-max font-bold
+}
+.container{
+    @apply bg-gray-100
+}
+.form-container{
+    @apply bg-white w-full mt-1 h-screen flex flex-col items-center  py-2
+}
 }
