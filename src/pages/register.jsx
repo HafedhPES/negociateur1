@@ -13,14 +13,14 @@ const inputcss="border border-gray-300 mt-2 outline-none rounded-md px-1 py-2 fo
                <p className="title">Créer un compte </p>
         
     </div>
-        <div className="form-container">
+        <div className="form-container px-2  ">
       
-  <div className=' flex flex-col'>
+  <div className='flex flex-col'>
   
   <div className="mt-4 flex gap-2">
     <div className="flex flex-col">
     <label className="form-label">Nom</label>
-    <input className="form-text" type="text" name="name"/>
+    <input className="form-text" type="text²" name="name"/>
     </div>
     <div className="flex flex-col">
     <label className="form-label">prénom</label>
