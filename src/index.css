@@ -24,7 +24,7 @@ button{
     @apply relative sm:pr-28 top-1 text-lg sm:text-xl  pb-6 border-b-4 border-indigo-500 text-indigo-500 w-max font-bold
 }
 .container{
-    @apply bg-gray-100
+    @apply bg-gray-100 flex flex-col
 }
 .form-container{
     @apply bg-white w-full mt-1 h-screen flex flex-col items-center  py-2
