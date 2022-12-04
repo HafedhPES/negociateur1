@@ -8,6 +8,9 @@ const validPrice= new RegExp('^[0-9]*$')
 const validNumber= new RegExp('^[0-9]+.?[0-9]*$')
 const validYear= new RegExp('^[0-9]{4}$')
 const validTel= new RegExp('^[0-9]{8}$')
+const validName= new RegExp('^[a-zA-Z]{3,25}$')
+const validEmail= new RegExp("")
+
 function validatePost(post,stepname){
  const errors={}
  
@@ -106,6 +109,46 @@ errors["superficie"]="saisir un nombre valide"
 
 }
 
+function validateUser(user){
+    const errors={}
+
+    if(user.nom.length==0){
+        errors['nom']="saisir un nom"
+    }
+    else if (!validName.test(user.nom)){
+        errors['nom']="saisir un nom valide"
+    }
+    if(user.prenom.length==0){
+        errors['prenom']="saisir un prenom"
+    }
+    else if (!validName.test(user.prenom)){
+        errors['prenom']="saisir un prenom valide"
+    }
+    if(user.email.length==0){
+        errors['email']="saisir un email"
+    }
+    else if (!validEmail.test(user.email)){
+        errors['email']="saisir un email valide"
+    }
+    if(user.tel.length==0){
+        errors['tel']="saisir un numéro de téléphone"
+    }
+    else if (!validTel.test(user.tel)){
+        errors['tel']="saisir un numéro de téléphone valide"
+    }
+    if(user.pwd.length==0){
+        errors['pwd']="saisir un mot de passe"
+    }
+    else if (user.pwd.length<8){
+        errors['pwd']="8 caractères au moins"
+    }
+    if(user.cpwd != user.pwd){
+        errors['cpwd']='vérifier la correspondance des mots de passe'
+    }
+    return errors
+}
+
 export default {
-    validatePost
+    validatePost,
+    validateUser
 }
