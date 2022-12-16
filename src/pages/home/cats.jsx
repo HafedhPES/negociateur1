@@ -12,36 +12,36 @@ const Cats =()=>{
   const textcatcss= "flex font-bold justify-center"
   return(<>
 
-        <div className= "flex text-black justify-center  w-full">
-<div className="grid  grid-cols-3 gap-10 sm:grid-cols-3 md:grid-cols-6 px-6 py-5">
+       
+<div className="grid grid-cols-1 w-[100%] px-5 py-2 gap-4">
     <div className="flex-col">
     <div className={catcss}><img className="w-10" src={ImmoIcon}/></div>
     <p className={textcatcss}>Immobilier</p>
     </div>
-    <div className="flex-col">
+    <div className="flex-col ">
     <div className={catcss} ><img className="w-10" src={VehIcon}/></div>
     <p className={textcatcss}>Véhicules</p>
     </div>
-    <div className="flex-col">
+    <div className="flex-col ">
     <div className={catcss} ><img className="w-10" src={HiTechIcon}/></div>
     <p className={textcatcss}>Hi-Tech</p>
     </div>
-    <div className="flex-col">
+    <div className=" flex-col ">
     <div className={catcss} ><img className="w-10" src={NautiqueIcon}/></div>
     <p className={textcatcss}>Nautique</p>
     </div>
-    <div className="flex-col">
+    <div className="flex-col ">
     <div className={catcss} ><img className="w-10" src={MeubleIcon}/></div>
     <p className={textcatcss}>Meubles</p>
     </div>
-    <div className="flex-col">
+    <div className="flex-col ">
 
     
     <div className={catcss}><img className="w-10" src={LoisirsIcon}/></div>
     <p className={textcatcss}>Loisirs</p>
     </div>
 </div>
-        </div>
+        
         </>
     )
 }
