@@ -4,7 +4,7 @@ import locIcon from "../../assets/location.svg"
 const Post=()=>{
 return(
 
-    <div className=" h-[400px] w-full sm:w-2/4 lg:w-1/4 inline-block p-2 whitespace-normal">
+    <div className=" h-[400px] w-[70%] sm:w-2/4 lg:w-1/4 inline-block p-2 whitespace-normal">
     <div className="h-[50%]">
         <img src={testImg2} className="w-full h-[100%] object-cover"/>
     </div>

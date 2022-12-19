@@ -15,7 +15,7 @@ const Navbar= ()=>{
 return(<>
     <div className="hidden drop-shadow-md md:flex  justify-between items-center w-full h-[65px] bg-white border-b border-gray-100">
     <div className="flex w-3/12  px-2">
-    <Link to="/"><h1 className=" sm:text-3xl text-[#eb6b56] font-bold">Negociateur</h1></Link>
+    <Link to="/"><h1 className="text-2xl text-[#eb6b56] font-bold">Negociateur</h1></Link>
     </div>
     
     <div className="flex justify-center  w-4/12 "> 
