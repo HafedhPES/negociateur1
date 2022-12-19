@@ -1,4 +1,4 @@
-import {React,useRef} from "react";
+import {React,useRef, useState} from "react";
 import Navbar from "../../components/navbar";
 import Cats from "./cats";
 import recentIcon from "../../assets/recent.svg"
@@ -6,6 +6,8 @@ import catIcon from "../../assets/category.svg"
 import rightIcon from "../../assets/right.svg"
 import leftIcon from "../../assets/left.svg"
 import starIcon from "../../assets/star.svg"
+import downIcon from "../../assets/down.svg"
+import upIcon from "../../assets/up.svg"
 
 import Post from "./post";
 const Home=()=>{
@@ -18,6 +20,7 @@ function scrollRight(ref){
 function scrollLeft(ref){
     ref.current.scrollLeft-=500
 }
+const [showCats,setShowCats]= useState(false)
 return(<>
 <Navbar/>
 
@@ -28,16 +31,23 @@ return(<>
 </div>
 
 <div className="flex flex-col w-[100%] md:w-[80%] ">
-    <div className="flex flex-col mb-3 border-b drop-shadow-md lg:hidden">
-<div className="flex px-3 mb-3  ">
+    <div className="flex flex-col mb-3 lg:hidden shadow-md">
+        <div className="flex relative items-center border-b ">
+<div className="flex px-3 mb-3 ">
         <span className="bg-[#eb6b56] flex px-1 py-1 rounded-lg">
     <img src={catIcon} className="w-5"/>
     </span>
     <span className="text-2xl font-bold px-1">Catégories</span>
     </div>
-    <div className="flex  ">
+    {!showCats?
+    <img onClick={()=>setShowCats(true)} className="absolute right-0 -top-3"src={downIcon}/>:
+    <img onClick={()=>setShowCats(false)} className="absolute right-0 -top-3"src={upIcon}/>}
+    </div>
+    {showCats&& (
+    <div className="flex ">
     <Cats/>
     </div>
+    )}
     </div>
     <div className="flex px-3">
         <span className="bg-[#eb6b56] flex px-1 py-1 rounded-lg">
