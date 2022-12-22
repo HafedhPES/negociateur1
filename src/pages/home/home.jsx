@@ -30,24 +30,14 @@ return(<>
 <Cats/>
 </div>
 
-<div className="flex flex-col w-[100%] md:w-[80%] ">
-    <div className="flex flex-col mb-3 lg:hidden shadow-md">
-        <div className="flex relative items-center border-b ">
-<div className="flex px-3 mb-3 ">
-        <span className="bg-[#eb6b56] flex px-1 py-1 rounded-lg">
-    <img src={catIcon} className="w-5"/>
-    </span>
-    <span className="text-2xl font-bold px-1">Catégories</span>
-    </div>
-    {!showCats?
-    <img onClick={()=>setShowCats(true)} className="absolute right-0 -top-3"src={downIcon}/>:
-    <img onClick={()=>setShowCats(false)} className="absolute right-0 -top-3"src={upIcon}/>}
-    </div>
-    {showCats&& (
-    <div className="flex ">
+<div className="flex flex-col w-[100%] md:w-[100%] ">
+    <div className="flex flex-col mb-3  lg:hidden shadow-md">
+       
+    
+    <div className="flex">
     <Cats/>
     </div>
-    )}
+  
     </div>
     <div className="flex px-3">
         <span className="bg-[#eb6b56] flex px-1 py-1 rounded-lg">
