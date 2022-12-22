@@ -73,7 +73,7 @@ return(<>
 
 
     </div>
-    <div className="hidden lg:flex absolute     top-[29%] right-14">
+    <div className="hidden lg:flex lg:flex-col absolute     top-[29%] right-8">
     <div onMouseEnter={()=>scrollRight(slider)} onClick={()=>scrollRight(slider)}className="bg-[#eb6b56] rounded-full  px-2 py-2 cursor-pointer ">
      <img className="" src={rightIcon}/>
         </div>
@@ -113,7 +113,7 @@ return(<>
 
 
     </div>
-    <div className="absolute hidden lg:flex    top-[95%] right-14">
+    <div className="absolute hidden lg:flex lg:flex-col   top-[105%] right-8">
     <div onMouseEnter={()=>scrollRight(immo)} onClick={()=>scrollRight(immo)} className="bg-[#eb6b56] rounded-full  px-2 py-2 cursor-pointer ">
      <img className="" src={rightIcon}/>
         </div>
