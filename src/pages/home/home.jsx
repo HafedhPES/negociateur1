@@ -20,22 +20,20 @@ function scrollRight(ref){
 function scrollLeft(ref){
     ref.current.scrollLeft-=500
 }
-const [showCats,setShowCats]= useState(false)
+const [selectedCat,setSelectedCat]= useState("accueil")
 return(<>
 <Navbar/>
 
 <div className="flex w-full mt-4 justify-evenly">
     
-<div className="hidden lg:flex w-[10%]">
-<Cats/>
-</div>
+
 
 <div className="flex flex-col w-[100%] md:w-[100%] ">
-    <div className="flex flex-col mb-3  lg:hidden shadow-md">
+    <div className="flex flex-col mb-3  shadow-md">
        
     
     <div className="flex">
-    <Cats/>
+    <Cats selectedCat={selectedCat} setSelectedCat={setSelectedCat}/>
     </div>
   
     </div>
