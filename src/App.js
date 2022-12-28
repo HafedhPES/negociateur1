@@ -10,19 +10,23 @@ import Forget from './pages/forget';
 import Publier from './pages/publier';
 import Home from './pages/home/home';
 import Details from './pages/details';
+import Category from './pages/category';
+import { useState } from 'react';
 
 function App() {
+  const [selectedCat,setSelectedCat]= useState("accueil")
   return (
     
     <Router>
       
     <Routes>
-      <Route exact path="/" element={<Home/>}/>
+      <Route exact path="/" element={<Home selectedCat={selectedCat} setSelectedCat={setSelectedCat}/>}/>
       <Route exact path="/login" element={<Login/>}/>
       <Route exact path="/publier" element={<Publier/>}/>
       <Route path="/register" element={<Register/>}/>
       <Route path="/forget" element={<Forget/>}/>
       <Route path="/details" element={<Details/>}/>
+      <Route path="/category" element={<Category selectedCat={selectedCat} setSelectedCat={setSelectedCat}/>}/>
     </Routes>
   
 </Router>

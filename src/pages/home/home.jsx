@@ -10,7 +10,8 @@ import downIcon from "../../assets/down.svg"
 import upIcon from "../../assets/up.svg"
 
 import Post from "./post";
-const Home=()=>{
+import { useEffect } from "react";
+const Home=({selectedCat,setSelectedCat})=>{
 const slider= useRef()
 const immo= useRef()
 function scrollRight(ref){
@@ -20,7 +21,9 @@ function scrollRight(ref){
 function scrollLeft(ref){
     ref.current.scrollLeft-=500
 }
-const [selectedCat,setSelectedCat]= useState("accueil")
+useEffect(()=>
+setSelectedCat("accueil"),[])
+
 return(<>
 <Navbar/>
 

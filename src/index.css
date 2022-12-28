@@ -29,4 +29,6 @@ button{
 .form-container{
     @apply bg-white w-full mt-1 h-screen flex flex-col items-center   py-2
 }
+
+
 }
